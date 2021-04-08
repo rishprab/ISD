@@ -21,7 +21,8 @@
             <span id="links"> <a href="profile.jsp"> Profile</a> | <a href="logout.jsp">Logout</a></span>
         </div>
         <%!
-            String name;
+            String firstName;
+            String lastName;
             String email;
             String password;
             String phone;
@@ -33,7 +34,8 @@
             User user = (User)session.getAttribute("user");
         %>
         <%
-            name = request.getParameter("name");
+            firstName = request.getParameter("firstName");
+            lastName = request.getParameter("lastName");
             email = request.getParameter("email");
             password = request.getParameter("password");
             phone = request.getParameter("phone");
@@ -44,28 +46,27 @@
         
         <form action="account.jsp" method="post">
             <table class="table">
-                <tr><td>Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("name") : user.getName()%>"></td></tr>
+                <tr><td>First Name</td><td><input type="text" name="firstName" value="<%=(submitted!= null) ?request.getParameter("firstName") : user.getfirstName()%>"></td></tr>
+                <tr><td>Last Name</td><td><input type="text" name="lastName" value="<%=(submitted!= null) ?request.getParameter("lastName") : user.getlastName()%>"></td></tr>
                 <tr><td>Email</td><td><input type="text" name="email" value="<%= (submitted!= null) ?request.getParameter("email") : user.getEmail()%>"></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password" value="<%= (submitted!= null) ?request.getParameter("password") : user.getPassword()%>"></td></tr>
                 <tr><td>Phone</td><td><input type="text" name="phone" value="<%=(submitted!= null) ?request.getParameter("phone") : user.getPhone() %>"></td></tr>                
-                <tr><td><input class="button" type="submit" value="Update"></td>
-                    <td>
-                        <select class="select" name="gender">
-                            <option value=""><%= (submitted!= null) ?request.getParameter("gender") : user.getGender()%></option>
+                <tr><td> DOB</td><td><input class="date" type="date" name="dob" value="<%= (submitted!= null) ?request.getParameter("dob") : user.getDob()%>"/></td></tr>
+                <tr><td><select class="select" name="gender">
+                            <option value=""><%= (submitted != null) ?request.getParameter("gender") : user.getGender()%></option>
                             <option value="male">M</option>
                             <option value="female">F</option>
                             <option value="other">Other</option>                                                                
-                        </select>
-                <tr><td> DOB</td><td><input class="date" type="date" name="dob" value="<%= (submitted!= null) ?request.getParameter("dob") : user.getDob()%>"/></td></tr> 
-                <input type="hidden" value="submitted" name="submitted">
-                    </td>
+                    </select></td>
+                    <td><input class="button" type="submit" value="Update"></td>
+                    <td><input type="hidden" value="submitted" name="submitted"></td>
                 </tr>                
             </table>
         </form>
                     
         
         <%
-            user.updateInfo(name,email,password,phone,gender,dob);
+            user.updateInfo(firstName,lastName,email,password,phone,gender,dob);
             session.setAttribute("user", user);
         %>
         
