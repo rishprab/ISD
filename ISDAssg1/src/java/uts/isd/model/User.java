@@ -11,7 +11,8 @@ import java.io.Serializable;
  */
 public class User implements Serializable{
     
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private String gender;
@@ -19,8 +20,9 @@ public class User implements Serializable{
     private String phone;
 
 
-public User(String name, String email, String password, String phone, String gender, String dob) {
-        this.name = name;
+public User(String firstName, String lastName, String email, String password, String phone, String gender, String dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phone = phone;
@@ -28,8 +30,9 @@ public User(String name, String email, String password, String phone, String gen
         this.dob = dob;
     }
     
-public void updateInfo(String name, String email, String password, String phone, String gender, String dob) {
-        this.name = name;
+public void updateInfo(String firstName, String lastName, String email, String password, String phone, String gender, String dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phone = phone;
@@ -41,12 +44,20 @@ public void updateInfo(String name, String email, String password, String phone,
     public User() {
     }
 
-    public String getName() {
-        return name;
+    public String getfirstName() {
+        return firstName;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    
+    public void setfirstName(String firstName) {
+    this.firstName = firstName;
+    }
+    
+    public String getlastName() {
+        return lastName;
+    }
+    
+    public void setlastName (String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
