@@ -46,8 +46,8 @@
         
         <form action="account.jsp" method="post">
             <table class="table">
-                <tr><td>First Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("firstName") : user.getfirstName()%>"></td></tr>
-                <tr><td>Last Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("lastName") : user.getlastName()%>"></td></tr>
+                <tr><td>First Name</td><td><input type="text" name="firstName" value="<%=(submitted!= null) ?request.getParameter("firstName") : user.getfirstName()%>"></td></tr>
+                <tr><td>Last Name</td><td><input type="text" name="lastName" value="<%=(submitted!= null) ?request.getParameter("lastName") : user.getlastName()%>"></td></tr>
                 <tr><td>Email</td><td><input type="text" name="email" value="<%= (submitted!= null) ?request.getParameter("email") : user.getEmail()%>"></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password" value="<%= (submitted!= null) ?request.getParameter("password") : user.getPassword()%>"></td></tr>
                 <tr><td>Phone</td><td><input type="text" name="phone" value="<%=(submitted!= null) ?request.getParameter("phone") : user.getPhone() %>"></td></tr>                
