@@ -48,17 +48,15 @@
                 <tr><td>Email</td><td><input type="text" name="email" value="<%= (submitted!= null) ?request.getParameter("email") : user.getEmail()%>"></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password" value="<%= (submitted!= null) ?request.getParameter("password") : user.getPassword()%>"></td></tr>
                 <tr><td>Phone</td><td><input type="text" name="phone" value="<%=(submitted!= null) ?request.getParameter("phone") : user.getPhone() %>"></td></tr>                
-                <tr><td><input class="button" type="submit" value="Update"></td>
-                    <td>
-                        <select class="select" name="gender">
+                <tr><td> DOB</td><td><input class="date" type="date" name="dob" value="<%= (submitted!= null) ?request.getParameter("dob") : user.getDob()%>"/></td></tr>
+                <tr><td><select class="select" name="gender">
                             <option value=""><%= (submitted!= null) ?request.getParameter("gender") : user.getGender()%></option>
                             <option value="male">M</option>
                             <option value="female">F</option>
                             <option value="other">Other</option>                                                                
-                        </select>
-                <tr><td> DOB</td><td><input class="date" type="date" name="dob" value="<%= (submitted!= null) ?request.getParameter("dob") : user.getDob()%>"/></td></tr> 
-                <input type="hidden" value="submitted" name="submitted">
-                    </td>
+                    </select></td>
+                    <td><input class="button" type="submit" value="Update"></td>
+                    <td><input type="hidden" value="submitted" name="submitted"></td>
                 </tr>                
             </table>
         </form>
