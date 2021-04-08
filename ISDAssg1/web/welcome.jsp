@@ -20,7 +20,8 @@
             <span id="links"><a href="logout.jsp">Logout</a> | <a href="profile.jsp">Profile</a></span>
         </div>
         <%
-            String name = request.getParameter("name");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
@@ -29,7 +30,8 @@
         %>
 
         <table class="table">            
-            <tr><td>Name:</td><td><%= name%></td></tr>
+            <tr><td>First Name:</td><td><%= firstName%></td></tr>
+            <tr><td>Last Name:</td><td><%= lastName%></td></tr>
             <tr><td>Email:</td><td><%= email%></td></tr>
             <tr><td>Password:</td><td><%= password%></td></tr>
             <tr><td>Phone:</td><td><%= phone%></td></tr>
@@ -37,7 +39,7 @@
             <tr><td>Date of Birth:</td><td><%= dob%></td></tr>            
         </table>
         <%
-            User user = new User(name,email,password,phone,gender,dob);
+            User user = new User(firstName,lastName,email,password,phone,gender,dob);
             session.setAttribute("user",user);
         %>
         
