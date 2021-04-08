@@ -21,7 +21,8 @@
             <span id="links"> <a href="profile.jsp"> Profile</a> | <a href="logout.jsp">Logout</a></span>
         </div>
         <%!
-            String name;
+            String firstName;
+            String lastName;
             String email;
             String password;
             String phone;
@@ -33,7 +34,8 @@
             User user = (User)session.getAttribute("user");
         %>
         <%
-            name = request.getParameter("name");
+            firstName = request.getParameter("firstName");
+            lastName = request.getParameter("lastName");
             email = request.getParameter("email");
             password = request.getParameter("password");
             phone = request.getParameter("phone");
@@ -44,7 +46,8 @@
         
         <form action="account.jsp" method="post">
             <table class="table">
-                <tr><td>Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("name") : user.getName()%>"></td></tr>
+                <tr><td>First Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("name") : user.getfirstName()%>"></td></tr>
+                <tr><td>Last Name</td><td><input type="text" name="name" value="<%=(submitted!= null) ?request.getParameter("name") : user.getlastName()%>"></td></tr>
                 <tr><td>Email</td><td><input type="text" name="email" value="<%= (submitted!= null) ?request.getParameter("email") : user.getEmail()%>"></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password" value="<%= (submitted!= null) ?request.getParameter("password") : user.getPassword()%>"></td></tr>
                 <tr><td>Phone</td><td><input type="text" name="phone" value="<%=(submitted!= null) ?request.getParameter("phone") : user.getPhone() %>"></td></tr>                
@@ -63,7 +66,7 @@
                     
         
         <%
-            user.updateInfo(name,email,password,phone,gender,dob);
+            user.updateInfo(firstName,lastName,email,password,phone,gender,dob);
             session.setAttribute("user", user);
         %>
         
