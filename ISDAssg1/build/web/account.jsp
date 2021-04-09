@@ -53,7 +53,7 @@
                 <tr><td>Phone</td><td><input type="text" name="phone" value="<%=(submitted!= null) ?request.getParameter("phone") : user.getPhone() %>"></td></tr>                
                 <tr><td> DOB</td><td><input class="date" type="date" name="dob" value="<%= (submitted!= null) ?request.getParameter("dob") : user.getDob()%>"/></td></tr>
                 <tr><td><select class="select" name="gender">
-                            <option value=""><%= (submitted != null) ?request.getParameter("gender") : user.getGender()%></option>
+                            <option value=""><%= (submitted!= null) ?request.getParameter("gender") : user.getGender()%></option>
                             <option value="male">M</option>
                             <option value="female">F</option>
                             <option value="other">Other</option>                                                                

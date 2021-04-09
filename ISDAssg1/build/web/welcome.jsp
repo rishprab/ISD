@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Mar 19, 2021, 10:24:22 AM
-    Author     : George
+    Author     : Goodboi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,30 +17,27 @@
     </head>
     <body onload="startTime()">
         <div id="bar">IOTBay
-            <span id="links"><a href="logout.jsp">Logout</a> | <a href="profile.jsp">Profile</a></span>
+            <span id="links"><a href="profile.jsp">Profile</a> | <a href="logout.jsp">Logout</a></span>
         </div>
         <%
-            String name = request.getParameter("name");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
             String gender = request.getParameter("gender");
             String dob = request.getParameter("dob");
         %>
-
-        <table class="table">            
-            <tr><td>Name:</td><td><%= name%></td></tr>
-            <tr><td>Email:</td><td><%= email%></td></tr>
-            <tr><td>Password:</td><td><%= password%></td></tr>
-            <tr><td>Phone:</td><td><%= phone%></td></tr>
-            <tr><td>Gender:</td><td><%= gender%></td></tr>
-            <tr><td>Date of Birth:</td><td><%= dob%></td></tr>            
-        </table>
+        <div class="m1">Welcome <%= firstName%> <%= lastName%>!
+        <br>Your contact:
+        <br>Email - <%= email%>
+        <br>Phone - <%= phone%>
+        <br>Check your profile for personal detail!
+        </div>
         <%
-            User user = new User(name,email,password,phone,gender,dob);
+            User user = new User(firstName,lastName,email,password,phone,gender,dob);
             session.setAttribute("user",user);
         %>
-        
         <div id="clock" class="footer"></div>
     </body>
 </html>

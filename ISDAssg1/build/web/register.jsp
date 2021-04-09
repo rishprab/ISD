@@ -21,21 +21,21 @@
         
         <form action="welcome.jsp" method="post">
             <table class="table">
-                <tr><td>Name</td><td><input type="text" name="name"></td></tr>
+                <tr><td>First Name</td><td><input type="text" name="firstName"></td></tr>
+                <tr><td>Last Name</td><td><input type="text" name="lastName"></td></tr>
                 <tr><td>Email</td><td><input type="text" name="email"></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password"></td></tr>
                 <tr><td>Phone</td><td><input type="text" name="phone"></td></tr>                
-                <tr><td><input class="button" type="submit" value="Sign Up"></td>
-                    <td>
+                <tr><td> DOB</td><td><input class="date" type="date" name="dob"/></td></tr> 
+                <tr><td>
                         <select class="select" name="gender">
                             <option value="empty">Gender</option>
                             <option value="male">M</option>
                             <option value="female">F</option>
                             <option value="other">Other</option>                                                                
                         </select>
-                        <tr><td> DOB</td><td><input class="date" type="date" name="dob"/></td></tr> 
                     </td>
-                </tr>                
+                        <td><input class="button" type="submit" value="Sign Up"></td></tr>
             </table>
         </form>
         

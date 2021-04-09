@@ -24,8 +24,7 @@
             User user = (User)session.getAttribute("user");
         %>
         <table class="table">            
-            <tr><td>First Name:</td><td><%= user.getfirstName() %></td></tr>
-            <tr><td>Last Name:</td><td><%= user.getlastName() %></td></tr>   
+            <tr><td>Name:</td><td><%= user.getName() %></td></tr>
             <tr><td>Email:</td><td> ${user.email} </td></tr>
             <tr><td>Password:</td><td>${user.password}</td></tr>
             <tr><td>Phone:</td><td> ${user.phone}</td></tr>

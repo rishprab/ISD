@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 15/03/2021, 3:05:56 PM
-    Author     : Goodbois
+    Author     : george
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,15 +24,12 @@
             User user = (User)session.getAttribute("user");
         %>
         <table class="table">            
-            <tr><td>First Name:</td><td><%= user.getfirstName() %></td></tr>
-            <tr><td>Last Name:</td><td><%= user.getlastName() %></td></tr>   
+            <tr><td>Name:</td><td><%= user.getName() %></td></tr>
             <tr><td>Email:</td><td> ${user.email} </td></tr>
             <tr><td>Password:</td><td>${user.password}</td></tr>
             <tr><td>Phone:</td><td> ${user.phone}</td></tr>
             <tr><td>Gender:</td><td> ${user.gender}</td></tr>
-            <tr><td>Date of Birth:</td><td> ${user.dob} </td></tr>    
-            <tr><td>Update your profile</td></tr>
-            <tr><td>by clicking on account.</td></tr>
+            <tr><td>Date of Birth:</td><td> ${user.dob} </td></tr>            
         </table>
         
         <div id="clock" class="footer">            

@@ -21,3 +21,4 @@ function checkHour(j) {
     if (j > 12) {j = j - 12}
     return j;
 }
+
