@@ -55,15 +55,3 @@ a:hover, a:active{
     text-align: center;
     opacity: 0.7;
 }
-#m1{
-    position: fixed;
-    top: 55px;
-    left: 10px;
-    right: 900px;
-    font-weight: bolder;
-    font-size: large;
-    background-color: lightblue;
-    border-left: 5px solid;
-    border-left-color: blue;
-    text-decoration: underline; 
-}
