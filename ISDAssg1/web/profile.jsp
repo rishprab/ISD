@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 15/03/2021, 3:05:56 PM
-    Author     : george
+    Author     : Goodbois
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -30,7 +30,9 @@
             <tr><td>Password:</td><td>${user.password}</td></tr>
             <tr><td>Phone:</td><td> ${user.phone}</td></tr>
             <tr><td>Gender:</td><td> ${user.gender}</td></tr>
-            <tr><td>Date of Birth:</td><td> ${user.dob} </td></tr>            
+            <tr><td>Date of Birth:</td><td> ${user.dob} </td></tr>    
+            <tr><td>Update your profile</td></tr>
+            <tr><td>by clicking on account.</td></tr>
         </table>
         
         <div id="clock" class="footer">            
