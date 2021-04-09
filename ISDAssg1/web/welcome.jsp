@@ -28,12 +28,14 @@
             String gender = request.getParameter("gender");
             String dob = request.getParameter("dob");
         %>
-        <div class="m1">Welcome <%= firstName%> <%= lastName%>!
-        <br>Your contact:
-        <br>Email - <%= email%>
-        <br>Phone - <%= phone%>
-        <br>Check your profile for personal detail!
-        </div>
+        <table class="table">
+            <tr><td>Welcome </td><td><%= firstName%> <%= lastName%>!</td></tr>
+            <tr><td>Your contact:</td></tr>
+            <tr><td>Email - <%= email%></td></tr>
+            <tr><td>Phone - <%= phone%></td></tr>
+            <tr><td>Check your profile for</td></tr> 
+            <tr><td>personal detail!</td></tr>
+        </table>
         <%
             User user = new User(firstName,lastName,email,password,phone,gender,dob);
             session.setAttribute("user",user);
